@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Encryption and Decryption</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <video autoplay muted loop id="video-background">
+        <source src="{{ url_for('static', filename='videos/matrix.mp4') }}" type="video/mp4">
+        Your browser does not support the video tags.
+    </video>
+    
+    <div class="content">
+        <h1>File Encryption and Decryption</h1>
+        
+        <form action="/process_file" method="post" enctype="multipart/form-data">
+            <label for="file">Choose a file for Encryption/Decryption:</label>
+            <input type="file" name="file" id="file" accept=".txt,.pdf,.docx,.xlsx">
+            <button type="submit" name="action" value="encrypt">Encrypt</button>
+            <button type="submit" name="action" value="decrypt">Decrypt</button>
+        </form>
+    </div>
+</body>
+</html>
